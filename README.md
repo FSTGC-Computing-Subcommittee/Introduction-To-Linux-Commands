@@ -35,8 +35,6 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-[Linux](./FSTGC%20Computing%20Guild%20Committee/Linux.md)
-
 # Why Linux?
 
 Now you may be wondering, why would I even need to learn to use a different operating system, much less commands in a terminal on an unknown system?
