@@ -1,22 +1,51 @@
-Linux
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-Linux
+# Table of Contents
 
-[toc]
+- [Why Linux?](#why-linux)
+  - [Linux is all around us](#linux-is-all-around-us)
+  - [Linux Expertise being a desired skill](#linux-expertise-being-a-desired-skill)
+- [A First Look](#a-first-look)
+- [Useful Commands](#useful-commands)
+  - [`cd`](#cd)
+  - [`ls`](#ls)
+  - [`man`](#man)
+  - [`mkdir`](#mkdir)
+  - [`rm` and `rmdir`](#rm-and-rmdir)
+  - [`cat`](#cat)
+  - [`grep`](#grep)
+  - [`cp`](#cp)
+  - [`mv`](#mv)
+  - [`touch`](#touch)
+  - [`locate` and `find`](#locate-and-find)
+  - [`df`](#df)
+  - [`du`](#du)
+  - [`tar`, `zip`, `unzip`](#tar-zip-unzip)
+  - [`ps`](#ps)
+  - [`kill`](#kill)
+- [Chaining Commands](#chaining-commands)
+  - [`;`,`|`, `&` and `&&`](#--and-)
+- [Variables and Environment Variables](#variables-and-environment-variables)
+  - [A brief introduction to variables](#a-brief-introduction-to-variables)
+  - [Regular (Shell) variables vs Environment Variables](#regular-shell-variables-vs-environment-variables)
+  - [Viewing environment and shell variables](#viewing-environment-and-shell-variables)
+  - [Setting Environment and Shell Variables](#setting-environment-and-shell-variables)
+  - [Unsetting environment and shell variables](#unsetting-environment-and-shell-variables)
 
-* * *
-[Linux](../FSTGC%20Computing%20Guild%20Committee/Linux.md)
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+[Linux](./FSTGC%20Computing%20Guild%20Committee/Linux.md)
+
 # Why Linux?
-Now you may be wondering, why would I even need to learn to use a different operating system, much less commands in a terminal on an unknown system?
 
+Now you may be wondering, why would I even need to learn to use a different operating system, much less commands in a terminal on an unknown system?
 
 ## Linux is all around us
 
 First of all, a lot of the software architecture we used to day is built upon linux, from the operating system on many of our mobile devices (Android), all the way to cloud architecture relying on linux.
 
-
 Now the primary reason for this is due to the reliability, stability and security offered out of the box.
-
 
 ## Linux Expertise being a desired skill
 
@@ -24,48 +53,45 @@ And the best part is, learning how to use linux could actually help you to impro
 
 Whether your prospective job will require you to manage a company's server, or develop their cloud architecture, potential employers are crying out for people who know the ins and outs of Linux.
 
-
-
 # A First Look
 
 When you open a terminal application you would see something like this:
 
-![f05039fe161fea60d92ab78bfa8506ad.png](../_resources/e73f5693db684c958f4e7a92f15e0336.png)
+![f05039fe161fea60d92ab78bfa8506ad.png](./_resources/e73f5693db684c958f4e7a92f15e0336.png)
 
 Let's take a closer look at this line:
 
-![03b846c76377b6f6a54ea337f50802ae.png](../_resources/58f4b4016741468dafcb277b3bafc857.png)
+![03b846c76377b6f6a54ea337f50802ae.png](./_resources/58f4b4016741468dafcb277b3bafc857.png)
 
 The format is `username@computer-name:filepath$`
 
 The `$` at the end represents that linuxworkshop is just a regular user. The root(a superuser) have a pound sign.
 
-![d2df9e4ebee395ec82711bfdac9d13ff.png](../_resources/a4d4c281ae57410f9de624440df32b97.png)
+![d2df9e4ebee395ec82711bfdac9d13ff.png](./_resources/a4d4c281ae57410f9de624440df32b97.png)
 
-*Note that in order for a regular user that has administrative privledges to do administrative tasks they must use `sudo`.*
+_Note that in order for a regular user that has administrative privledges to do administrative tasks they must use `sudo`._
 
 without sudo:
-![d31564019ff41821562a2c9c0500d8ed.png](../_resources/9d195c4cea78432dbbd2d118f08ac2a3.png)
+![d31564019ff41821562a2c9c0500d8ed.png](./_resources/9d195c4cea78432dbbd2d118f08ac2a3.png)
 
 with sudo:
-![c1b278252674e717306eca7609db63f9.png](../_resources/6769d639e2e64e0fa51634500d891cf2.png)
+![c1b278252674e717306eca7609db63f9.png](./_resources/6769d639e2e64e0fa51634500d891cf2.png)
 
 When you use sudo for the first time in a terminal session, you will need to enter your password. For a while, subsequent sudo commands won't require a password.
 
 So, the part after the semi-colon is the file path. `~` actually represents the path to the current users home directory. This will generally be `/home/username`.
 
-`/` by itself is the root of the file system similar to  `C:` in Windows.
+`/` by itself is the root of the file system similar to `C:` in Windows.
 
 The `pwd` command prints the path of your current working directory.
 
-![6b223d9bada66f6cc3bf55d427fc8fc3.png](../_resources/a3bb66444fa94b5f990df0a5144b5c21.png)
-
+![6b223d9bada66f6cc3bf55d427fc8fc3.png](./_resources/a3bb66444fa94b5f990df0a5144b5c21.png)
 
 # Useful Commands
 
 ## `cd`
 
-This command is mainly used for navigating through directories 
+This command is mainly used for navigating through directories
 
 ```bash
 $ cd ..
@@ -91,16 +117,17 @@ $ ls -al
 This serves as a user manual for all commands on your system.
 
 So if we were to run the following:
+
 ```bash
 $ man ls
 
 ```
-It would give a breakdown of how the command `ls` is used
 
+It would give a breakdown of how the command `ls` is used
 
 ## `mkdir`
 
-![7084462ea2e882c1be84a6e507c22f9d.png](../_resources/da7cd6c8c66548858a4bc2f099ba3e00.png)
+![7084462ea2e882c1be84a6e507c22f9d.png](./_resources/da7cd6c8c66548858a4bc2f099ba3e00.png)
 
 ## `rm` and `rmdir`
 
@@ -115,36 +142,38 @@ $ rm -r <some-dir-with-files>
 ```
 
 ## `cat`
-![d3eec0565e0697bcaf4d21b47a7d3821.png](../_resources/9d62b4adfbbf40909fad067b912be6f9.png)
+
+![d3eec0565e0697bcaf4d21b47a7d3821.png](./_resources/9d62b4adfbbf40909fad067b912be6f9.png)
 
 ## `grep`
+
 The grep command is used to search text. It searches the given file for lines containing a match to the given strings or words.
 
-![grep.png](../_resources/4b7013fdb2a54ace80581912eebc7f9d.png)
+![grep.png](./_resources/4b7013fdb2a54ace80581912eebc7f9d.png)
 
-p.s) You can also use regex with grep ^_^
+p.s) You can also use regex with grep ^\_^
 
 ## `cp`
-cp stands for copy. This command is used to copy files or group of files or directory. It creates an exact image of a file on a disk with different file name. cp command requires at least two filenames in its arguments. 
+
+cp stands for copy. This command is used to copy files or group of files or directory. It creates an exact image of a file on a disk with different file name. cp command requires at least two filenames in its arguments.
 
 Usage
+
 ```bash
 $ cp <file-name> <directory-name>
 ```
 
 Example
 
-
-![cp.png](../_resources/1ef52f7cf1cd4b078d52dcb1d78e6c03.png)
-
-
+![cp.png](./_resources/1ef52f7cf1cd4b078d52dcb1d78e6c03.png)
 
 ## `mv`
 
 Moving and renaming files.
 
 ## `touch`
- It is used to create a file without any content. . 
+
+It is used to create a file without any content. .
 
 ## `locate` and `find`
 
@@ -155,6 +184,7 @@ Moving and renaming files.
 ```bash
 
 ```
+
 ## `df`
 
 show a disk usage report
@@ -180,8 +210,7 @@ $ ps aux
 
 ## `kill`
 
-Similar to the ``End Task`` feature in task manager on windows, the kill command allows you to immediately terminate a running process on your system
-
+Similar to the `End Task` feature in task manager on windows, the kill command allows you to immediately terminate a running process on your system
 
 # Chaining Commands
 
@@ -191,18 +220,18 @@ Similar to the ``End Task`` feature in task manager on windows, the kill command
 
 `&&` - run the next command only if the previous command ran successfully.
 
-
-`|` -  execute the preceding statement and connect its output to the input of the proceeding statement
-
+`|` - execute the preceding statement and connect its output to the input of the proceeding statement
 
 `&` - run first process in background
 
 # Variables and Environment Variables
+
 - regular variables vs environment variables
 - viewing variables
 - setting and unsetting variables
 
 ## A brief introduction to variables
+
 Normally variables have the following format:
 
 ```bash
